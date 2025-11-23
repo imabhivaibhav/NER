@@ -11,6 +11,47 @@ This combination enables the model to effectively capture both word semantics an
 
 ---
 
+## 🧠 Model Architecture
+
+The model uses a **hierarchical architecture** that captures both semantic meaning (word-level features) and morphological patterns (character-level features):
+
+---
+
+### 🔹 **1. Input Layer (Words)**
+- Accepts **word indices**.
+- Passed through a **Word Embedding layer** with:
+  - **Embedding dimension:** 80
+
+---
+
+### 🔹 **2. Input Layer (Characters)**
+- Accepts **character indices for each word**.
+- Passed through a **Character Embedding layer** with:
+  - **Embedding dimension:** 16
+- Further processed through:
+  - **TimeDistributed Conv1D (CNN):** extracts sub-word patterns such as prefixes, suffixes, and capitalization cues.
+  - **GlobalMaxPooling1D:** reduces the CNN output into a compact character-level representation.
+
+---
+
+### 🔹 **3. Concatenation Layer**
+- The **word embedding** and **character-derived features** are concatenated to form a hybrid word representation.
+
+---
+
+### 🔹 **4. Context Encoder**
+- A **Bidirectional LSTM (48 units)** processes the concatenated vectors.
+- Captures **contextual information** from both forward and backward directions.
+
+---
+
+### 🔹 **5. Output Layer**
+- A **TimeDistributed Dense layer** with **Softmax activation**.
+- Predicts the **NER tag** for each word in the sentence.
+
+---
+
+
 ## Introduction
 Named Entity Recognition (NER) identifies entities such as **person names, locations, organizations, dates, etc.** in text. This project uses a **BiLSTM with CNN-based character embeddings** to capture both word-level context and subword features, enabling robust entity recognition, including unseen words.
 
