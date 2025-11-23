@@ -139,20 +139,50 @@ Update the paths to point to your local dataset files:
 - `eng.testa` — Validation data  
 - `eng.testb` — Test data
 
+train_file = r"/path/to/your/eng.train"
+testa_file = r"/path/to/your/eng.testa"
+testb_file = r"/path/to/your/eng.testb"
 
-
-
-
-
-
-
-
-## Dataset
-
-
-```python
-import numpy as np
-
-def hello():
-    print("Hello World")
+### 2. Run the script
 ```
+python ner_model.py
+
+```
+
+### 3. Process:
+
+The script will parse the CoNLL files.
+
+It will build the vocabulary for words, tags, and characters.
+
+The model will train for 10 epochs (by default).
+
+Finally, it will run a prediction on a sample custom paragraph.
+
+## ⚙️ Hyperparameters
+
+| Hyperparameter   | Value | Description                          |
+|-----------------|-------|--------------------------------------|
+| Word Embed Dim  | 80    | Dimension of word vectors            |
+| Char Embed Dim  | 16    | Dimension of character vectors       |
+| CNN Filters     | 20    | Number of filters for char feature extraction |
+| Kernel Size     | 3     | Size of the CNN window               |
+| LSTM Units      | 48    | Hidden units in the Bidirectional LSTM |
+| Batch Size      | 32    | Samples per gradient update          |
+| Optimizer       | Adam  | Adaptive learning rate optimizer     |
+
+## 📝 Example Output
+
+After training, the script predicts entities for the sentence:  
+
+*"I eat apple every day, I leave in India, I leave in Mumbai."*
+
+### Sample Console Output
+
+```
+Sentence 1: [('I', 'O'), ('eat', 'O'), ('apple', 'O'), ('every', 'O'), ('day', 'O'), (',', 'O')]
+Sentence 2: [('I', 'O'), ('leave', 'O'), ('in', 'O'), ('India', 'I-LOC'), (',', 'O')]
+Sentence 3: [('I', 'O'), ('leave', 'O'), ('in', 'O'), ('Mumbai', 'I-LOC'), ('.', 'O')]
+
+```
+
