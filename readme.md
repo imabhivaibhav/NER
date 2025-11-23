@@ -104,13 +104,12 @@ Install the required Python libraries using `pip`:
 ```bash
 pip install numpy tensorflow
 ```
-Requirements
+### 📌 Requirements
 
-Python: 3.7+
+- **Python:** 3.7+  
+- **TensorFlow:** 2.x  
+- **NumPy**
 
-TensorFlow: 2.x
-
-NumPy
 
 
 
