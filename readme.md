@@ -88,6 +88,7 @@ lamb NN I-NP O
 . . O O
 
 
+
 Structure per line:
 
 
@@ -95,6 +96,8 @@ WORD POS-TAG CHUNK-TAG NER-TAG
 
 
 This format ensures compatibility with the Bi-LSTM + Char-CNN NER pipeline.
+
+
 
 
 
