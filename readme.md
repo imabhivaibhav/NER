@@ -77,6 +77,26 @@ Each file should follow the **standard CoNLL-2003 format**, where:
 
 Example:
 
+EU NNP B-NP B-ORG
+rejects VBZ B-VP O
+German JJ B-NP B-MISC
+call NN I-NP O
+to TO B-VP O
+boycott VB I-VP O
+British JJ B-NP B-MISC
+lamb NN I-NP O
+. . O O
+
+
+Structure per line:
+
+
+WORD POS-TAG CHUNK-TAG NER-TAG
+
+
+This format ensures compatibility with the Bi-LSTM + Char-CNN NER pipeline.
+
+
 
 
 ## Dataset
