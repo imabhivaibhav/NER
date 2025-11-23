@@ -97,6 +97,22 @@ WORD POS-TAG CHUNK-TAG NER-TAG
 
 This format ensures compatibility with the Bi-LSTM + Char-CNN NER pipeline.
 
+## 🛠️ Dependencies
+
+Install the required Python libraries using `pip`:
+
+```bash
+pip install numpy tensorflow
+```
+Requirements
+
+Python: 3.7+
+
+TensorFlow: 2.x
+
+NumPy
+
+
 
 
 
