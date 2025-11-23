@@ -48,3 +48,34 @@ Clone the repository and install dependencies:
 git clone https://github.com/yourusername/ner-bilstm-cnn.git
 cd ner-bilstm-cnn
 pip install -r requirements.txt
+
+## Preprocessing
+
+1. **Tokenization:**  
+   Sentences are split into words; words are split into characters.
+
+2. **Vocabulary construction:**  
+   - Word vocabulary includes `PAD` and `UNK`.  
+   - Character vocabulary includes `PAD` and `UNK`.
+
+3. **Padding:**  
+   - Sentences are padded to 113 words.  
+   - Words are padded to 12 characters.
+
+4. **Tag encoding:**  
+   Tags are converted to indices and one-hot encoded for softmax classification.
+
+**Example code snippet for converting sentences to character indices:**
+
+```python
+def sentences_to_char_indices(sentences, max_len, max_word_len):
+    X_char = []
+    for sent in sentences:
+        sent_chars = []
+        for word in sent[:max_len]:
+            word_chars = [char2idx.get(c, char2idx["UNK"]) for c in word[:max_word_len]]
+            word_chars += [char2idx["PAD"]] * (max_word_len - len(word_chars))
+            sent_chars.append(word_chars)
+        sent_chars += [[char2idx["PAD"]] * max_word_len] * (max_len - len(sent_chars))
+        X_char.append(sent_chars)
+    return np.array(X_char)
