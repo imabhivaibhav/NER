@@ -54,7 +54,7 @@ The model uses a **hierarchical architecture** that captures both semantic meani
 
 ## 📂 Dataset Requirements
 
-This project uses the **CoNLL-2003** dataset for training, validation, and testing.
+This project uses the **CoNLL-2003** dataset for training, validation, and testing. And modified Train data.
 
 You must have the following files available locally:
 
@@ -63,6 +63,25 @@ You must have the following files available locally:
 - **eng.testb** — Test dataset  
 
 ---
+
+
+- **Training sentences:** 15,020 (original + additional files)  
+- **Test sentences:** 7,150 (`eng.testa` + `eng.testb`)  
+
+Each word is labeled with its NER tag (e.g., `B-PER`, `I-LOC`, `O`).  
+
+**Input shapes for the model:**  
+
+| Data | Shape |
+|------|-------|
+| X_train | (15020, 113) |
+| y_train | (15020, 113, 10) |
+| X_train_char | (15020, 113, 12) |
+| X_test_char | (7150, 113, 12) |
+
+---
+
+
 
 ## 📄 Data Format (CoNLL)
 
@@ -110,6 +129,17 @@ pip install numpy tensorflow
 - **TensorFlow:** 2.x  
 - **NumPy**
 
+## 🚀 Usage
+
+### 1. Configure Paths
+Open the Python script and locate the **file path section** at the top.  
+Update the paths to point to your local dataset files:
+
+- `eng.train` — Training data  
+- `eng.testa` — Validation data  
+- `eng.testb` — Test data
+
+
 
 
 
@@ -118,23 +148,7 @@ pip install numpy tensorflow
 
 
 ## Dataset
-The model uses an **extended CoNLL-2003 dataset**:
 
-- **Training sentences:** 15,020 (original + additional files)  
-- **Test sentences:** 7,150 (`eng.testa` + `eng.testb`)  
-
-Each word is labeled with its NER tag (e.g., `B-PER`, `I-LOC`, `O`).  
-
-**Input shapes for the model:**  
-
-| Data | Shape |
-|------|-------|
-| X_train | (15020, 113) |
-| y_train | (15020, 113, 10) |
-| X_train_char | (15020, 113, 12) |
-| X_test_char | (7150, 113, 12) |
-
----
 
 ```python
 import numpy as np
