@@ -52,10 +52,32 @@ The model uses a **hierarchical architecture** that captures both semantic meani
 ---
 
 
-## Introduction
-Named Entity Recognition (NER) identifies entities such as **person names, locations, organizations, dates, etc.** in text. This project uses a **BiLSTM with CNN-based character embeddings** to capture both word-level context and subword features, enabling robust entity recognition, including unseen words.
+## 📂 Dataset Requirements
+
+This project uses the **CoNLL-2003** dataset for training, validation, and testing.
+
+You must have the following files available locally:
+
+- **eng.train** — Training dataset  
+- **eng.testa** — Validation dataset  
+- **eng.testb** — Test dataset  
+
+> ⚠️ **Note:**  
+> The code currently points to: `H:\NER\`  
+> Make sure to **update the file paths** in the script according to your local directory structure.
 
 ---
+
+## 📄 Data Format (CoNLL)
+
+Each file should follow the **standard CoNLL-2003 format**, where:
+
+- Every **line contains one word**, its POS tag, chunk tag, and NER tag.
+- **Sentences are separated** by an empty line.
+
+Example:
+
+
 
 ## Dataset
 The model uses an **extended CoNLL-2003 dataset**:
