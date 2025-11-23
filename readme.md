@@ -77,7 +77,7 @@ Each file should follow the **standard CoNLL-2003 format**, where:
 
 Example:
 
-\`\`\`
+```
 EU NNP B-NP B-ORG
 rejects VBZ B-VP O
 German JJ B-NP B-MISC
@@ -87,7 +87,7 @@ boycott VB I-VP O
 British JJ B-NP B-MISC
 lamb NN I-NP O
 . . O O
-\`\`\`
+```
 
 
 
@@ -124,3 +124,9 @@ Each word is labeled with its NER tag (e.g., `B-PER`, `I-LOC`, `O`).
 
 ---
 
+```python
+import numpy as np
+
+def hello():
+    print("Hello World")
+```
