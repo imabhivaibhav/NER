@@ -62,10 +62,6 @@ You must have the following files available locally:
 - **eng.testa** — Validation dataset  
 - **eng.testb** — Test dataset  
 
-> ⚠️ **Note:**  
-> The code currently points to: `H:\NER\`  
-> Make sure to **update the file paths** in the script according to your local directory structure.
-
 ---
 
 ## 📄 Data Format (CoNLL)
@@ -94,8 +90,9 @@ lamb NN I-NP O
 
 Structure per line:
 
-
+```
 WORD POS-TAG CHUNK-TAG NER-TAG
+```
 
 
 This format ensures compatibility with the Bi-LSTM + Char-CNN NER pipeline.
