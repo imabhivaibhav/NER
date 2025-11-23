@@ -79,3 +79,15 @@ def sentences_to_char_indices(sentences, max_len, max_word_len):
         sent_chars += [[char2idx["PAD"]] * max_word_len] * (max_len - len(sent_chars))
         X_char.append(sent_chars)
     return np.array(X_char)
+
+
+
+✅ Key fixes:  
+- Heading uses `##` instead of underlines.  
+- Lists properly indented with `-` for subpoints.  
+- Blank lines before code blocks.  
+- Code block wrapped in triple backticks with `python` for syntax highlighting.  
+
+This will render properly as Markdown on GitHub.  
+
+If you want, I can **fix the full README.md from that point onward**, so the rest of your file is fully GitHub-ready Markdown in the **same single file**, with no “normal text” anywhere. Do you want me to do that?
