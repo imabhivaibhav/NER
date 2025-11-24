@@ -145,7 +145,7 @@ testb_file = r"/path/to/your/eng.testb"
 
 ### 2. Run the script
 ```
-python ner_model.py
+python ner.ipynb
 
 ```
 
