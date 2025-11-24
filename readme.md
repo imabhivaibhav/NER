@@ -191,3 +191,6 @@ Sentence 3: [('I', 'O'), ('leave', 'O'), ('in', 'O'), ('Mumbai', 'I-LOC'), ('.',
 
 [Download CoNLL-2003 Dataset (Modified - 15020 sentences)](https://github.com/imabhivaibhav/NER/blob/be659ac8f8fbe358ebcc286d8b30eaa60633c401/CoNLL%20Modified.zip)
 
+[Download Code file)](https://github.com/imabhivaibhav/NER/blob/c4611d37b7df64b1f399386512558e8074d6c855/ner.ipynb)
+
+[Download Report)](https://github.com/imabhivaibhav/NER/blob/c4611d37b7df64b1f399386512558e8074d6c855/Report%20Named%20Entity%20Recognition.pdf)
